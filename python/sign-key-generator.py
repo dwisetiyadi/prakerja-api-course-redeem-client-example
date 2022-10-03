@@ -1,6 +1,5 @@
 from hashlib import sha1
 import hmac
-import base64
 
 # if using this value bellow should output d46b59b221335976b46eafb752035a1172a8beb2
 text = 'myclient_code1516239022POST/api/v1/integration/payment/redeem-code/commit{"code":"code"}'
