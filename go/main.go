@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	// if using this value bellow should output: d46b59b221335976b46eafb752035a1172a8beb2 <nil>
+	// if using this value bellow should output: 943c20a8e36b6243f576404b00fffdc86411ce1f <nil>
 	nowunix := int64(1516239022)
 	text := "myclient_code"
 	key := "my_sign_key"

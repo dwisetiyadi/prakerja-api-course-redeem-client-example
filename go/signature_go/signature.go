@@ -33,11 +33,11 @@ func NewPlatformSignature(clientCode string, credential string) PlatformSignatur
 
 func (p platformSignature) GenerateForRedeemStatus(ctx context.Context, t time.Time, redeemCode string) (string, error) {
 	return p.generate(ctx, SignatureCheck{
-		Method:        "GET",
+		Method:        "POST",
 		Timestamp:     t.Unix(),
 		Authorization: "",
-		Body:          []byte(""),
-		Endpoint:      fmt.Sprintf("/api/v1/integration/payment/redeem-code/status/%s", redeemCode),
+		Body:          []byte(fmt.Sprintf(`{"redeem_code":"%s"}`, redeemCode)),
+		Endpoint:      "/api/v1/integration/payment/redeem-code/status",
 	})
 }
 
@@ -46,7 +46,7 @@ func (p platformSignature) GenerateForRedeemCommit(ctx context.Context, t time.T
 		Method:        "POST",
 		Timestamp:     t.Unix(),
 		Authorization: "",
-		Body:          []byte(fmt.Sprintf(`{"code":"%s"}`, redeemCode)),
+		Body:          []byte(fmt.Sprintf(`{"redeem_code":"%s"}`, redeemCode)),
 		Endpoint:      "/api/v1/integration/payment/redeem-code/commit",
 	})
 }

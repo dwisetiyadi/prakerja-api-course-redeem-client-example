@@ -29,8 +29,8 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
     // if using this value bellow should output
-    // d46b59b221335976b46eafb752035a1172a8beb2
-    String text = "myclient_code1516239022POST/api/v1/integration/payment/redeem-code/commit{\"code\":\"code\"}";
+    // 943c20a8e36b6243f576404b00fffdc86411ce1f
+    String text = "myclient_code1516239022POST/api/v1/integration/payment/redeem-code/commit{\"redeem_code\":\"code\"}";
     String key = "my_sign_key";
 
     String hmac = calculateRFC2104HMAC(text, key);
