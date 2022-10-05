@@ -46,7 +46,7 @@ func (p platformSignature) GenerateForRedeemCommit(ctx context.Context, t time.T
 		Method:        "POST",
 		Timestamp:     t.Unix(),
 		Authorization: "",
-		Body:          []byte(fmt.Sprintf(`{"code":"%s"}`, redeemCode)),
+		Body:          []byte(fmt.Sprintf(`{"redeem_code":"%s"}`, redeemCode)),
 		Endpoint:      "/api/v1/integration/payment/redeem-code/commit",
 	})
 }
